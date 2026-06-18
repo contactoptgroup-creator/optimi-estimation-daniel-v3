@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email for Daniel - OPT IM GROUP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #070810 0%, #131623 100%);
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #d4af37;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .header-subtitle {
+            font-size: 15px;
+            color: #a1a1aa;
+        }
+
+        .email-body {
+            padding: 48px 40px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+
+        .greeting strong {
+            color: #d4af37;
+        }
+
+        p {
+            font-size: 15px;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 100%);
+            border-left: 4px solid #d4af37;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #22c55e;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resources-section {
+            margin: 40px 0;
+        }
+
+        .resources-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .resource-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+
+        .resource-card:hover {
+            background: #f5f5f5;
+            border-color: #d4af37;
+        }
+
+        .resource-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .resource-icon.video {
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+        }
+
+        .resource-icon.contract {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        }
+
+        .resource-icon.program {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+
+        .resource-icon.form {
+            background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+        }
+
+        .resource-content {
+            flex: 1;
+        }
+
+        .resource-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .resource-description {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .resource-link:hover {
+            background: #333333;
+            transform: translateY(-1px);
+        }
+
+        .resource-link.primary {
+            background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+            color: #070810;
+        }
+
+        .resource-link.primary:hover {
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .presentation-cta {
+            background: linear-gradient(135deg, #070810 0%, #131623 100%);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .presentation-cta h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .presentation-cta p {
+            font-size: 14px;
+            color: #a1a1aa;
+            margin-bottom: 20px;
+        }
+
+        .presentation-cta .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+            color: #070810;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .presentation-cta .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+        }
+
+        .next-steps {
+            background: #f8fdf9;
+            border: 1px solid #dcfce7;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .next-steps h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #166534;
+            margin-bottom: 16px;
+        }
+
+        .next-steps ol {
+            margin-left: 20px;
+            color: #4a4a4a;
+            font-size: 15px;
+        }
+
+        .next-steps li {
+            margin-bottom: 8px;
+        }
+
+        .signature {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .signature-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .signature-title {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .signature-contact {
+            font-size: 14px;
+            color: #4a4a4a;
+        }
+
+        .signature-contact a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .email-footer {
+            background: #f9fafb;
+            padding: 24px 40px;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .footer-text a {
+            color: #6b7280;
+            text-decoration: none;
+        }
+
+        /* Copy button for plain text version */
+        .copy-section {
+            margin-top: 60px;
+            padding: 32px;
+            background: #1a1a1a;
+            border-radius: 16px;
+        }
+
+        .copy-section h3 {
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .plain-text {
+            background: #2a2a2a;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #d1d5db;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <div class="logo">OPT IM GROUP</div>
+            <div class="header-title">Your Revenue Strategy 2026-2027</div>
+            <div class="header-subtitle">Paris 9th District - 56 sqm Apartment</div>
+        </div>
+
+        <!-- Body -->
+        <div class="email-body">
+            <p class="greeting">Hello <strong>Daniel</strong>,</p>
+
+            <p>Thank you for our call earlier today. As promised, I'm sending you all the documents and resources to help you make an informed decision about partnering with OPT IM GROUP for your property management.</p>
+
+            <p>Following your request, I've prepared a detailed revenue projection for 2026 and 2027 using our optimized <strong>Airbnb 90-day + Bail Mobilite mixed strategy</strong>, which maximizes your returns while fully complying with Paris regulations.</p>
+
+            <!-- Highlight Box -->
+            <div class="highlight-box">
+                <h3>Your Projected Net Revenue</h3>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-value">45,600 EUR</div>
+                        <div class="stat-label">H2 2026 (6 months)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">89,400 EUR</div>
+                        <div class="stat-label">Full Year 2027</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">7,450 EUR</div>
+                        <div class="stat-label">Monthly Average</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Presentation CTA -->
+            <div class="presentation-cta">
+                <h3>View Your Complete Revenue Presentation</h3>
+                <p>Interactive slides with month-by-month breakdown, pricing details, and strategy explanation</p>
+                <a href="https://optimi-estimation-daniel-v3.vercel.app/" class="cta-button">
+                    Open Presentation
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="resources-section">
+                <div class="resources-title">Documents & Resources</div>
+
+                <!-- Video -->
+                <div class="resource-card">
+                    <div class="resource-icon video">📹</div>
+                    <div class="resource-content">
+                        <div class="resource-title">Video: My Work with SuperHote in Paris</div>
+                        <div class="resource-description">Watch my interview with Mathieu from SuperHote where I discuss my concierge operations across 200+ properties in Paris and my professional background.</div>
+                        <a href="[VIDEO_LINK_PLACEHOLDER]" class="resource-link primary" target="_blank">
+                            Watch Video
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Management Contract -->
+                <div class="resource-card">
+                    <div class="resource-icon contract">📄</div>
+                    <div class="resource-content">
+                        <div class="resource-title">Management Contract - OPT IM GROUP</div>
+                        <div class="resource-description">Review our standard property management agreement. This covers all terms, commission structure, services included, and owner protections.</div>
+                        <a href="[CONTRACT_LINK_PLACEHOLDER]" class="resource-link" target="_blank">
+                            View Contract
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SuperHote Elite Program -->
+                <div class="resource-card">
+                    <div class="resource-icon program">🏆</div>
+                    <div class="resource-content">
+                        <div class="resource-title">SuperHote Elite Program</div>
+                        <div class="resource-description">Learn about the SuperHote Elite partnership program that powers our professional approach. This program has helped us achieve industry-leading results for property owners.</div>
+                        <a href="[SUPERHOTE_ELITE_LINK_PLACEHOLDER]" class="resource-link" target="_blank">
+                            Learn More
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Onboarding Form -->
+                <div class="resource-card">
+                    <div class="resource-icon form">✅</div>
+                    <div class="resource-content">
+                        <div class="resource-title">Property Onboarding Form</div>
+                        <div class="resource-description">Once you're ready to proceed, complete this form to provide us with all the details about your property. This starts the onboarding process.</div>
+                        <a href="[ONBOARDING_FORM_LINK_PLACEHOLDER]" class="resource-link primary" target="_blank">
+                            Start Onboarding
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h4>Next Steps</h4>
+                <ol>
+                    <li>Review the presentation and documents at your convenience</li>
+                    <li>Let me know if you have any questions - I'm here to help</li>
+                    <li>When ready, complete the onboarding form to start the process</li>
+                    <li>We'll schedule a property visit and begin preparations</li>
+                    <li>Target launch: <strong>July 1st, 2026</strong></li>
+                </ol>
+            </div>
+
+            <p>I'm confident that our mixed strategy approach will deliver the results you're looking for. With 200+ properties under management and a proven track record, you're in experienced hands.</p>
+
+            <p>Feel free to reach out with any questions. I'm available by phone, email, or we can schedule another call at your convenience.</p>
+
+            <!-- Signature -->
+            <div class="signature">
+                <div class="signature-name">Jean-Marc Taouo</div>
+                <div class="signature-title">Founder & CEO, OPT IM GROUP</div>
+                <div class="signature-contact">
+                    <a href="tel:+33612784932">+33 6 12 78 49 32</a><br>
+                    <a href="mailto:contactoptgroup@gmail.com">contactoptgroup@gmail.com</a><br>
+                    <a href="https://calendly.com/contactoptgroup" target="_blank">Book a call</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="email-footer">
+            <p class="footer-text">
+                OPT IM GROUP - Paris Property Management<br>
+                Managing 200+ properties across Paris<br>
+                <a href="https://optimi-site.pages.dev">optimi-site.pages.dev</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Plain Text Version for Copy -->
+    <div class="copy-section">
+        <h3 style="color: #d4af37;">Plain Text Version (Copy & Paste)</h3>
+        <div class="plain-text">Subject: Your Revenue Strategy 2026-2027 - Paris 9th District Property
+
+Hello Daniel,
+
+Thank you for our call earlier today. As promised, I'm sending you all the documents and resources to help you make an informed decision about partnering with OPT IM GROUP for your property management.
+
+Following your request, I've prepared a detailed revenue projection for 2026 and 2027 using our optimized Airbnb 90-day + Bail Mobilite mixed strategy, which maximizes your returns while fully complying with Paris regulations.
+
+YOUR PROJECTED NET REVENUE:
+- H2 2026 (6 months): 45,600 EUR
+- Full Year 2027: 89,400 EUR
+- Monthly Average: 7,450 EUR / month
+
+VIEW YOUR COMPLETE PRESENTATION:
+https://optimi-estimation-daniel-v3.vercel.app/
+
+DOCUMENTS & RESOURCES:
+
+1. VIDEO: My Work with SuperHote in Paris
+Watch my interview with Mathieu from SuperHote where I discuss my concierge operations across 200+ properties in Paris.
+[VIDEO_LINK]
+
+2. MANAGEMENT CONTRACT - OPT IM GROUP
+Review our standard property management agreement with all terms and services.
+[CONTRACT_LINK]
+
+3. SUPERHOTE ELITE PROGRAM
+Learn about the partnership program that powers our professional approach.
+[SUPERHOTE_ELITE_LINK]
+
+4. PROPERTY ONBOARDING FORM
+Complete this form to start the onboarding process when ready.
+[ONBOARDING_FORM_LINK]
+
+NEXT STEPS:
+1. Review the presentation and documents at your convenience
+2. Let me know if you have any questions
+3. When ready, complete the onboarding form
+4. We'll schedule a property visit and begin preparations
+5. Target launch: July 1st, 2026
+
+I'm confident that our mixed strategy approach will deliver the results you're looking for. With 200+ properties under management, you're in experienced hands.
+
+Feel free to reach out with any questions.
+
+Best regards,
+
+Jean-Marc Taouo
+Founder & CEO, OPT IM GROUP
++33 6 12 78 49 32
+contactoptgroup@gmail.com
+Book a call: https://calendly.com/contactoptgroup
+        </div>
+    </div>
+</body>
+</html>
