@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Recap for Daniel - OPT IM GROUP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .email-box {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #070810 0%, #131623 100%);
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .email-header .icon {
+            font-size: 32px;
+        }
+
+        .email-header .subject {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .email-content {
+            padding: 32px;
+            font-size: 15px;
+            color: #1a1a1a;
+        }
+
+        .email-content p {
+            margin-bottom: 20px;
+        }
+
+        .resource-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .resource-item .emoji {
+            font-size: 24px;
+        }
+
+        .resource-item .text {
+            flex: 1;
+        }
+
+        .resource-item .label {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .resource-item .url {
+            font-size: 13px;
+            color: #d4af37;
+            word-break: break-all;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid #22c55e;
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .summary-box h3 {
+            font-size: 14px;
+            color: #166534;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-item .emoji {
+            font-size: 18px;
+        }
+
+        .summary-item .text {
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+
+        .summary-item strong {
+            color: #166534;
+        }
+
+        .launch-badge {
+            background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+            color: #070810;
+            padding: 12px 20px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            margin: 16px 0;
+        }
+
+        .signature {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .signature-name {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .signature-phone {
+            color: #d4af37;
+            font-size: 14px;
+        }
+
+        /* Copy Section */
+        .copy-section {
+            margin-top: 32px;
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .copy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .copy-header h3 {
+            color: #d4af37;
+            font-size: 16px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+            color: #070810;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .copy-btn.copied {
+            background: #22c55e;
+            color: white;
+        }
+
+        .plain-text {
+            background: #2a2a2a;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #d1d5db;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 Email Recap for Daniel</h1>
+            <p>Copy and paste this email directly</p>
+        </div>
+
+        <!-- Visual Preview -->
+        <div class="email-box">
+            <div class="email-header">
+                <span class="icon">🏠✨</span>
+                <span class="subject">Your Revenue Strategy 2026-2027</span>
+            </div>
+            <div class="email-content">
+                <p>Hi Daniel,</p>
+                <p>Great speaking with you today! As promised, here's everything you need:</p>
+
+                <div class="resource-item">
+                    <span class="emoji">📊</span>
+                    <div class="text">
+                        <div class="label">Your Revenue Presentation</div>
+                        <div class="url">https://optimi-estimation-daniel-v3.vercel.app/</div>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <span class="emoji">📧</span>
+                    <div class="text">
+                        <div class="label">All Documents & Resources</div>
+                        <div class="url">https://optimi-estimation-daniel-v3.vercel.app/email-daniel.html</div>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <h3>Quick Summary</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <span class="emoji">💰</span>
+                            <span class="text">H2 2026: <strong>21,960 EUR</strong> net</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="emoji">💰</span>
+                            <span class="text">Full Year 2027: <strong>46,260 EUR</strong> net</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="emoji">🎯</span>
+                            <span class="text">Airbnb months: <strong>~8,400 EUR</strong>/month</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="emoji">🏢</span>
+                            <span class="text">Bail Mobilité: <strong>~2,340 EUR</strong>/month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="launch-badge">
+                    🚀 Target launch: July 1st, 2026
+                </div>
+
+                <p>Feel free to reach out with any questions!</p>
+
+                <div class="signature">
+                    <div class="signature-name">Best,<br>Jean-Marc</div>
+                    <div class="signature-phone">📞 +33 6 12 78 49 32</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copy Section -->
+        <div class="copy-section">
+            <div class="copy-header">
+                <h3>📋 Plain Text (Click to Copy)</h3>
+                <button class="copy-btn" onclick="copyText()">Copy Email</button>
+            </div>
+            <div class="plain-text" id="emailText">Subject: Your Revenue Strategy 2026-2027 🏠✨
+
+Hi Daniel,
+
+Great speaking with you today! As promised, here's everything you need:
+
+📊 Your Revenue Presentation
+https://optimi-estimation-daniel-v3.vercel.app/
+
+📧 All Documents & Resources (contract, video, onboarding form, etc.)
+https://optimi-estimation-daniel-v3.vercel.app/email-daniel.html
+
+Quick Summary:
+💰 H2 2026: 21,960 EUR net
+💰 Full Year 2027: 46,260 EUR net
+🎯 Airbnb months: ~8,400 EUR/month
+🏢 Bail Mobilité months: ~2,340 EUR/month
+
+🚀 Target launch: July 1st, 2026
+
+Feel free to reach out with any questions!
+
+Best,
+Jean-Marc
+📞 +33 6 12 78 49 32</div>
+        </div>
+    </div>
+
+    <script>
+        function copyText() {
+            const text = document.getElementById('emailText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy Email';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
